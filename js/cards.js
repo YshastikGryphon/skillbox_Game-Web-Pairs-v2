@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // images for cards. Taken by id
   let amazingImagesForCards = [
     'img/bird1.jpg',
-    'img/bird5.jpg',
+    'img/bird5.png',
     'img/bird2.jpg',
     'img/bird3.jpg',
     'img/bird4.jpg',
