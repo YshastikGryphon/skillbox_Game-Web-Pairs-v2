@@ -1,0 +1,224 @@
+:root {
+  --main-bg: #0d1b2a;
+  --secondary-bg: #1b263b;
+  --input: #415a77;
+  --input--hover: #54769c;
+  --input--active: #3e546d;
+  --element: #778da9;
+  --text: #e0e1dd;
+  --speed: .5s;
+}
+
+body {
+  margin: 0;
+  padding: 40px 0;
+  background-color: var(--main-bg);
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.card-settings {
+  gap: 40px;
+  padding: 20px;
+  background-color: var(--secondary-bg);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.card-setting__row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card-setting__row:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.card-setting__row-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card-settings__elem {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 700;
+}
+
+.card-settings__elem-input {
+  padding: 8px 16px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--input);
+  border: none;
+  outline: none;
+  transition: background .2s;
+  border-radius: 5px;
+}
+
+.card-field {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  min-height: 600px;
+  padding: 20px;
+  background-color: var(--secondary-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.card-field__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text);
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotateY(0);
+  transition: transform var(--speed) ease-in-out, filter 2s ease;
+}
+
+.card-field__card-wrap {
+  width: 160px;
+  height: 240px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.card-field__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-size: 72px;
+  color: var(--main-bg);
+  transform: scale(-1, 1);
+  user-select: none;
+}
+
+.card-field__card span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-size: 124px;
+  color: var(--main-bg);
+  transform: scale(-1, 1);
+  user-select: none;
+}
+
+.card-field__card::after {
+  content: '?';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--input);
+  font-size: 124px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0s;
+  transition-delay: calc(var(--speed) / 2);
+}
+
+.card-field__card.show {
+  transform: rotateY(180deg);
+}
+
+.card-field__card.show::after {
+  opacity: 0;
+  cursor: default;
+}
+
+.card-field__card.success {
+  filter: brightness(.75);
+}
+
+.card-setting__start {
+  padding: 5px 30px;
+  background-color: var(--input);
+  color: var(--text);
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: background .2s;
+}
+
+.card-field.won::after {
+  content: 'Победа!';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  color: rgba(255, 255, 255, .4);
+  font-size: 72px;
+  opacity: .1;
+  animation: winning 20s infinite;
+}
+
+@keyframes winning {
+  8% {
+    background-color: rgb(255, 0, 0);
+  }
+
+  24% {
+    background-color: rgb(255, 255, 0);
+  }
+
+  40% {
+    background-color: rgb(0, 255, 0);
+  }
+
+  56% {
+    background-color: rgb(0, 255, 255);
+  }
+
+  72% {
+    background-color: rgb(0, 0, 255);
+  }
+
+  88% {
+    background-color: rgb(255, 0, 255);
+  }
+
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
+}
+
+.card-settings__elem-input:hover {
+  background-color: var(--input--hover);
+}
+
+.card-setting__start:hover {
+  background-color: var(--input--hover);
+}
+
+.card-setting__start:active {
+  background-color: var(--input--active);
+}

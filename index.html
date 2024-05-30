@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Classes cards</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/cards.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="card-settings" id="cardSettings">
+      <div class="card-setting__row">
+        <label class="card-settings__elem">
+          Количество пар:
+          <input class="card-settings__elem-input" id="cardSettingsPairs" type="number" value="4">
+        </label>
+        <label class="card-settings__elem">
+          Задержка карт (мс):
+          <input class="card-settings__elem-input" id="cardSettingsCardDelay" type="number" value="250">
+        </label>
+      </div>
+      <div class="card-setting__row-buttons">
+        <button class="card-setting__start" id="cardStart">
+          Начать
+        </button>
+      </div>
+    </div>
+    <div class="card-field" id="cardField">
+    </div>
+  </div>
+
+</body>
+</html>
