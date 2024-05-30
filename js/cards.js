@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardSettingsCardDelay = document.getElementById('cardSettingsCardDelay');
 
     cardSettingsPairs.addEventListener('blur', () => {
-      if ((cardSettingsPairs.value >= 2) && (cardSettingsPairs.value <= 20)) {
+      if ((cardSettingsPairs.value >= 2) && (cardSettingsPairs.value <= 50)) {
         defaultPairs = cardSettingsPairs.value;
       } else {
         cardSettingsPairs.value = defaultPairs;
